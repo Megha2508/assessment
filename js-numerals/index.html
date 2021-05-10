@@ -1,17 +1,20 @@
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 <div class="boxStyle">
     <div class="Box">
         <h1> Numeric To Word Converter</h1>
-        <input type="number" id="number" />
+        <div style="padding-left: 230px;">
+            <input type="number" id="number" />
+        </div>
         <p id="phrase"></p>
-        <button id="convert" onclick="display(id)">Convert</button>
+        <div style="padding-left: 268px;"><button id="convert" onclick="display(id)">Convert</button></div>
         <p id="testCase"></p>
-        <button id="test" onclick="display(id)">Test</button>
+        <button id="test" onclick="display(id)" style="background-color: #2EBC31;">Test Cases</button>
     </div>
 </div>
 <script src="numericToWords.js"></script>
 </body>
-</head>
 </html>

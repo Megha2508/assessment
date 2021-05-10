@@ -84,7 +84,7 @@ function display(id){
         document.getElementById("phrase").innerHTML=(numberToWords(document.getElementById("number").value))
     }
     if(id=="test"){
-        var arr = [7,42,2001,1999,342251,1300420]
+        var arr = [7,42,2001,1999,17999,342251,1300420]
         document.getElementById("testCase").innerHTML=(arr.map(i => test(i.toString())).join("<br />"))
     }
 }

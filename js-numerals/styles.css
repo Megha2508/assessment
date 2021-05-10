@@ -1,0 +1,52 @@
+.boxStyle{
+    padding-left: 280px;
+    padding-top: 100px;
+}
+
+.Box{
+    padding-left: 140px;
+    padding-top: 50px;
+    width: 850px;
+    height: 600px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 20px 20px 20px #29282830;
+    opacity: 1;
+    border-radius: 9px;
+    border-style: groove;
+}
+
+h1{
+    padding-left: 140px;
+}
+
+input{
+    padding-left: 20px;
+    width: 222px;
+    height: 36px;
+    border: 1px solid #CACCD5;
+    text-align: center;
+    justify-content: center;
+    color: #37517A;
+    font-size: 24px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+button{
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    background-color: #1160F7;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Heebo";
+    color: #FFFFFF;
+    border-radius: 9px;
+}
+
+p{
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 500;
+}
