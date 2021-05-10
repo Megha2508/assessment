@@ -1,11 +1,15 @@
 <html>
 <head>
 <body>
-<div>
-    <h1> Numeric To Word Converter</h1>
-    <input type="number" id="number" />
-    <p id="phrase"></p>
-    <button id="convert" onclick="numberToWords(document.getElementById('number').value)">Convert</button>
+<div class="boxStyle">
+    <div class="Box">
+        <h1> Numeric To Word Converter</h1>
+        <input type="number" id="number" />
+        <p id="phrase"></p>
+        <button id="convert" onclick="display(id)">Convert</button>
+        <p id="testCase"></p>
+        <button id="test" onclick="display(id)">Test</button>
+    </div>
 </div>
 <script src="numericToWords.js"></script>
 </body>

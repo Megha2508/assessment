@@ -1,4 +1,5 @@
-function numberToWords(n) {
+// - - - - - Business Logic - - - - - -
+function numberToWords(number) {
 
     var units, tens, scales, start, end, digits, digitsLen, digit, ints, i, word, words, and='and';
 
@@ -6,18 +7,18 @@ function numberToWords(n) {
     tens = [ '', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety' ];
     scales = [ '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quatttuor-decillion', 'quindecillion', 'sexdecillion', 'septen-decillion', 'octodecillion', 'novemdecillion', 'vigintillion', 'centillion' ];
 
-    start = n.length;
+    start = number.length;
     digits = [];
     if(start <= 4){
         while( start > 0 ) {
             end = start;
-            digits.push( n.slice( ( start = Math.max( 0, start - 2 ) ), end ) );
+            digits.push( number.slice( ( start = Math.max( 0, start - 2 ) ), end ) );
         }
     }
     else {
         while( start > 0 ) {
             end = start;
-            digits.push( n.slice( ( start = Math.max( 0, start - 3 ) ), end ) );
+            digits.push( number.slice( ( start = Math.max( 0, start - 3 ) ), end ) );
         }
     }
     
@@ -27,7 +28,7 @@ function numberToWords(n) {
     }
     
     words = [];
-    if( parseInt( n ) === 0 ) {
+    if( parseInt( number ) === 0 ) {
         words.push('zero');
     }
     for( i = 0; i < digitsLen; i++ ) {
@@ -37,7 +38,7 @@ function numberToWords(n) {
             if( ints[1] === 1 ) {
                 ints[0] += 10;
             }
-            if( n > 10000 ){
+            if( number > 10000 ){
                 if( ( word = scales[i] ) ) {
                     words.push( word );
                 }
@@ -48,7 +49,7 @@ function numberToWords(n) {
                     words.push( word );
                 }
             }
-            if( n < 10000 ){
+            if( number < 10000 ){
                 if( ( word = units[ ints[0] ] ) ) {
                     ints[0] > 10 && ints[0] < 20 ? words.push(word + ' hundred and') : words.push( word );
                 }
@@ -74,5 +75,22 @@ function numberToWords(n) {
             }
         } 
     }        
-    return document.getElementById("phrase").innerHTML=words.reverse().join(' ');    
+    return words.reverse().join(' ');    
+}
+
+// - - - - - Show on browser - - - - - -
+function display(id){
+    if(id=="convert"){
+        document.getElementById("phrase").innerHTML=(numberToWords(document.getElementById("number").value))
+    }
+    if(id=="test"){
+        var arr = [7,42,2001,1999,342251,1300420]
+        document.getElementById("testCase").innerHTML=(arr.map(i => test(i.toString())).join("<br />"))
+    }
+}
+
+
+// - - - - - Tests - - - - - -
+function test(n) {
+    return n + " = = = " + numberToWords(n);
 }
